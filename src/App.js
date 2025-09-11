@@ -3,9 +3,10 @@ import './App.css';
 import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
 import Menu from './components/Menu';
 import Location from './components/Location';
+import About from './components/About';
+import Catering from './components/Catering';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -14,9 +15,10 @@ function App() {
     <div className="App">
       <Navbar />
       <Hero />
-      <About />
       <Menu />
       <Location />
+      <About />
+      <Catering />
       <Contact />
       <Footer />
       <Analytics />

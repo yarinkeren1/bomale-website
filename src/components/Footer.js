@@ -7,9 +7,17 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-logo">
             <h3>BOMALÉ</h3>
-            <span>BOUREKAS</span>
           </div>
-          <p>&copy; 2024 Bomalé Bourekas. All rights reserved.</p>
+          <ul className="footer-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#find">Find the Truck</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div className="footer-social">
+            <a href="https://instagram.com/bomalebourekas" target="_blank" rel="noreferrer">Instagram</a>
+          </div>
+          <p>&copy; 2025 BOMALÉ</p>
         </div>
       </div>
     </footer>

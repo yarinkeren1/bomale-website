@@ -50,8 +50,9 @@ const Navbar = () => {
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li><a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a></li>
           <li><a href="#menu" onClick={(e) => { e.preventDefault(); scrollToSection('menu'); }}>Menu</a></li>
+          <li><a href="#find" onClick={(e) => { e.preventDefault(); scrollToSection('find'); }}>Find the Truck</a></li>
           <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
-          <li><a href="#location" onClick={(e) => { e.preventDefault(); scrollToSection('location'); }}>Location</a></li>
+          <li><a href="#catering" onClick={(e) => { e.preventDefault(); scrollToSection('catering'); }}>Catering</a></li>
           <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
         </ul>
         <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
