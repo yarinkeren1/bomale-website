@@ -11,18 +11,6 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offsetTop = element.offsetTop - 70;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
-    closeMenu();
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       const navbar = document.querySelector('.navbar');
@@ -43,17 +31,23 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-logo">
-          <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
+          <a href="/" onClick={closeMenu}>
             <h1>BOMALÉ</h1>
           </a>
         </div>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+ codex/redesign-website-structure-for-bomale
+          <li><a href="/menu" onClick={closeMenu}>Explore the Menu</a></li>
+          <li><a href="/find" onClick={closeMenu}>Find the Truck</a></li>
+          <li><a href="/book" onClick={closeMenu}>Book Us for an Event</a></li>
+
           <li><a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a></li>
           <li><a href="#menu" onClick={(e) => { e.preventDefault(); scrollToSection('menu'); }}>Menu</a></li>
           <li><a href="#find" onClick={(e) => { e.preventDefault(); scrollToSection('find'); }}>Find the Truck</a></li>
           <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
           <li><a href="#catering" onClick={(e) => { e.preventDefault(); scrollToSection('catering'); }}>Catering</a></li>
           <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
+ main
         </ul>
         <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>

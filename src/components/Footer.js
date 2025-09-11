@@ -9,10 +9,17 @@ const Footer = () => {
             <h3>BOMALÉ</h3>
           </div>
           <ul className="footer-nav">
+ codex/redesign-website-structure-for-bomale
+            <li><a href="/">Home</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/find">Find the Truck</a></li>
+            <li><a href="/contact">Contact</a></li>
+
             <li><a href="#home">Home</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#find">Find the Truck</a></li>
             <li><a href="#contact">Contact</a></li>
+ main
           </ul>
           <div className="footer-social">
             <a href="https://instagram.com/bomalebourekas" target="_blank" rel="noreferrer">Instagram</a>
