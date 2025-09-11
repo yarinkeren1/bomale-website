@@ -149,7 +149,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.3rem;
 }
 
 .logo-with-pronunciation {
@@ -174,7 +174,7 @@ p {
 }
 
 .pronunciation {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: var(--burnt-sienna);
     font-style: italic;
     font-family: 'Open Sans', sans-serif;
