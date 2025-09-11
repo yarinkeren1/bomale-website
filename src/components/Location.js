@@ -1,37 +1,33 @@
 import React from 'react';
 
 const Location = () => {
+  const schedule = [
+    { day: 'Monday', spot: 'Brickell Lunch Lot', time: '11 AM – 2 PM' },
+    { day: 'Wednesday', spot: 'Wynwood Night Market', time: '6 PM – 10 PM' },
+    { day: 'Friday', spot: 'South Beach Late Night', time: '8 PM – 1 AM' },
+    { day: 'Sunday', spot: 'Coconut Grove Farmers Market', time: '10 AM – 3 PM' }
+  ];
+
   return (
-    <section id="location" className="location">
+    <section id="find" className="location">
       <div className="container">
-        <h2>Find Us</h2>
+        <h2>Find the Truck</h2>
         <div className="location-content">
           <div className="location-info">
-            <h3>Current Location</h3>
-            <p className="location-address">Downtown Food Truck Plaza<br />123 Main Street<br />Your City, State 12345</p>
-            
-            <h3>Hours</h3>
+            <h3>Weekly Schedule</h3>
             <div className="hours">
-              <div className="hours-item">
-                <span>Monday - Friday</span>
-                <span>11:00 AM - 7:00 PM</span>
-              </div>
-              <div className="hours-item">
-                <span>Saturday</span>
-                <span>10:00 AM - 8:00 PM</span>
-              </div>
-              <div className="hours-item">
-                <span>Sunday</span>
-                <span>12:00 PM - 6:00 PM</span>
-              </div>
+              {schedule.map((item, index) => (
+                <div key={index} className="hours-item">
+                  <span>{item.day}</span>
+                  <span>{item.spot} — {item.time}</span>
+                </div>
+              ))}
             </div>
-
-            <h3>Follow Our Journey</h3>
-            <p>Check our social media for real-time location updates and special events!</p>
+            <p>We post updates regularly — follow <a href="https://instagram.com/bomalebourekas" target="_blank" rel="noreferrer">@bomalebourekas</a> on Instagram.</p>
           </div>
           <div className="location-map">
             <div className="map-placeholder">
-              <p>📍 Interactive Map Coming Soon</p>
+              <p>📍 Event schedule embed coming soon</p>
             </div>
           </div>
         </div>

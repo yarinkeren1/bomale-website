@@ -80,43 +80,41 @@
     padding: 2rem;
 }
 
-.hero-logo {
-    margin-bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.2rem;
-}
-
-.logo-with-pronunciation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .main-logo {
-    font-size: 8rem;
+    font-size: 6rem;
     color: var(--falu-red);
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     letter-spacing: 2px;
 }
 
-.sub-logo {
-    font-size: 4rem;
+.tagline {
+    font-size: 1.5rem;
     color: var(--chocolate);
-    margin-bottom: 0;
-    letter-spacing: 1px;
+    margin-bottom: 1rem;
 }
 
-.pronunciation {
-    font-size: 0.9rem;
-    color: var(--burnt-sienna);
+.pitch {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.hero-phrase {
     font-style: italic;
-    font-family: 'Open Sans', sans-serif;
-    margin-top: -0.2rem;
-    margin-bottom: 0;
-    letter-spacing: 1px;
+    color: var(--burnt-sienna);
+}
+
+.brand-phrase {
+    font-style: italic;
+    color: var(--burnt-sienna);
 }
 
 /* About Section */
@@ -222,10 +220,38 @@
     margin-bottom: 0.5rem;
 }
 
+.menu-desc {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
 .price {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--burnt-sienna);
+}
+
+.labels {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.label {
+    background-color: var(--dutch-white);
+    color: var(--chocolate);
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.menu-note {
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
 }
 
 /* Location Section */
@@ -377,6 +403,53 @@
     border-color: var(--falu-red);
 }
 
+/* Catering Section */
+.catering {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.catering-pitch {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.catering-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.catering-form input,
+.catering-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--dutch-white);
+    border-radius: 10px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.catering-form input:focus,
+.catering-form textarea:focus {
+    outline: none;
+    border-color: var(--falu-red);
+}
+
+.catering-note {
+    text-align: center;
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+.contact-phrase {
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--burnt-sienna);
+}
 /* Footer */
 .footer {
     background-color: var(--chocolate);
@@ -391,14 +464,39 @@
     margin-bottom: 0.5rem;
 }
 
-.footer-logo span {
+
+.footer-nav {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.footer-nav a {
+    color: var(--dutch-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
     color: var(--hunyadi-yellow);
-    font-size: 1rem;
+}
+
+.footer-social {
+    margin-bottom: 1rem;
+}
+
+.footer-social a {
+    color: var(--hunyadi-yellow);
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .footer p {
     color: var(--dutch-white);
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 /* Buttons */
@@ -470,20 +568,8 @@
         padding: 1rem;
     }
 
-    .hero-logo {
-        gap: 0.2rem;
-    }
-
     .main-logo {
         font-size: 5rem;
-    }
-
-    .sub-logo {
-        font-size: 3rem;
-    }
-
-    .pronunciation {
-        font-size: 0.8rem;
     }
 
     .about-content,
@@ -512,20 +598,8 @@
         padding: 0 15px;
     }
 
-    .hero-logo {
-        gap: 0.15rem;
-    }
-
     .main-logo {
         font-size: 4rem;
-    }
-
-    .sub-logo {
-        font-size: 2.5rem;
-    }
-
-    .pronunciation {
-        font-size: 0.75rem;
     }
 
     .btn {
