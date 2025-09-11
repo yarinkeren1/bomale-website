@@ -36,9 +36,18 @@ const Navbar = () => {
           </a>
         </div>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+ codex/redesign-website-structure-for-bomale
           <li><a href="/menu" onClick={closeMenu}>Explore the Menu</a></li>
           <li><a href="/find" onClick={closeMenu}>Find the Truck</a></li>
           <li><a href="/book" onClick={closeMenu}>Book Us for an Event</a></li>
+
+          <li><a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a></li>
+          <li><a href="#menu" onClick={(e) => { e.preventDefault(); scrollToSection('menu'); }}>Menu</a></li>
+          <li><a href="#find" onClick={(e) => { e.preventDefault(); scrollToSection('find'); }}>Find the Truck</a></li>
+          <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
+          <li><a href="#catering" onClick={(e) => { e.preventDefault(); scrollToSection('catering'); }}>Catering</a></li>
+          <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
+ main
         </ul>
         <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>

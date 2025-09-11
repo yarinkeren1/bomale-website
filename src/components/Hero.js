@@ -15,6 +15,17 @@ const Hero = () => {
     }
   }, []);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.offsetTop - 70;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section id="home" className="hero">
       <div className="hero-content">
@@ -22,9 +33,15 @@ const Hero = () => {
         <p className="tagline">Bourekas. Ful-FILLING Food.</p>
         <p className="pitch">Traditional Israeli street food, with a twist—coming to Miami.</p>
         <div className="hero-buttons">
+ codex/redesign-website-structure-for-bomale
           <a className="btn btn-primary" href="/menu">Explore the Menu</a>
           <a className="btn btn-secondary" href="/find">Find the Truck</a>
           <a className="btn btn-primary" href="/book">Book Us for an Event</a>
+
+          <button className="btn btn-primary" onClick={() => scrollToSection('menu')}>Explore the Menu</button>
+          <button className="btn btn-secondary" onClick={() => scrollToSection('find')}>Find the Truck</button>
+          <button className="btn btn-primary" onClick={() => scrollToSection('catering')}>Book Us for an Event</button>
+ main
         </div>
         <p className="hero-phrase">Flaky. Golden. Addictive.</p>
       </div>
