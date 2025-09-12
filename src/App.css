@@ -99,7 +99,7 @@
 .definition {
     position: absolute;
     opacity: 0.25;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Patrick Hand SC', cursive;
     line-height: 1.2;
     color: var(--text-dark);
     max-width: 200px;
