@@ -124,23 +124,23 @@
 }
 
 .definition-1 {
-    top: 50%;
-    left: 20px;
+    top: 35%;
+    left: 5%;
     transform: translateY(-50%) rotate(-5deg);
     max-width: 180px;
 }
 
 .definition-2 {
-    top: 50%;
-    right: 20px;
+    top: 55%;
+    left: 12%;
     transform: translateY(-50%) rotate(3deg);
     max-width: 180px;
 }
 
 .definition-3 {
-    top: 70%;
-    left: 50%;
-    transform: translateX(-50%) rotate(-2deg);
+    top: 45%;
+    right: 5%;
+    transform: translateY(-50%) rotate(-2deg);
     max-width: 180px;
 }
 
