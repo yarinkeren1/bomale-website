@@ -87,7 +87,7 @@ The built files in the `build` folder can be deployed to any static hosting serv
 
 - React 18
 - CSS3 with CSS Variables
-- Google Fonts (Amatic SC, Open Sans)
+- Google Font (Amatic SC)
 - Responsive Design
 - Modern JavaScript (ES6+)
 

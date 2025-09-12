@@ -16,10 +16,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Amatic SC', cursive;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Amatic SC', cursive;
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--dutch-white);
@@ -39,7 +40,7 @@ h1, h2, h3, h4 {
 }
 
 p {
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Amatic SC', cursive;
 }
 
 h1 {
@@ -184,7 +185,7 @@ p {
     font-size: 0.9rem;
     color: var(--burnt-sienna);
     font-style: italic;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Amatic SC', cursive;
     margin-top: -0.2rem;
     margin-bottom: 0;
     letter-spacing: 1px;
