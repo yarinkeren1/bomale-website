@@ -16,10 +16,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Amatic SC', cursive;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Amatic SC', cursive;
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--dutch-white);
@@ -60,6 +61,7 @@ h4 {
 p {
     margin-bottom: 1rem;
     color: var(--text-light);
+    font-family: 'Amatic SC', cursive;
 }
 
 /* Smooth scrolling */

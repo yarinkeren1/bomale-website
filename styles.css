@@ -131,17 +131,18 @@ p {
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--dutch-white) 0%, var(--white) 100%);
-    min-height: 60vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 70px;
     text-align: center;
+    position: relative;
 }
 
 .hero-content {
     max-width: 800px;
-    padding: 2rem;
+    padding: 1 rem;
+    margin-top: -35px; /* Offset for fixed navbar */
 }
 
 .hero-logo {
@@ -150,6 +151,8 @@ p {
     flex-direction: column;
     align-items: center;
     gap: 0.2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .logo-with-pronunciation {
