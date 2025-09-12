@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="nav-container">
         <div className="nav-logo">
           <Link to="/">
-            <h1>BOMALÉ</h1>
+            <h1>BOMA'LE</h1>
           </Link>
         </div>
         <ul className="nav-menu">

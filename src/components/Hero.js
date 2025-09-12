@@ -2,52 +2,70 @@ import React, { useEffect } from 'react';
 
 const Hero = () => {
   useEffect(() => {
-    const heroContent = document.querySelector('.hero-content');
-    if (heroContent) {
-      heroContent.style.opacity = '0';
-      heroContent.style.transform = 'translateY(20px)';
+    try {
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) {
+        heroContent.style.opacity = '0';
+        heroContent.style.transform = 'translateY(20px)';
 
-      setTimeout(() => {
-        heroContent.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
-        heroContent.style.opacity = '1';
-        heroContent.style.transform = 'translateY(0)';
-      }, 200);
-    }
+        setTimeout(() => {
+          if (heroContent) {
+            heroContent.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
+            heroContent.style.opacity = '1';
+            heroContent.style.transform = 'translateY(0)';
+          }
+        }, 200);
+      }
 
-    // Animation for about section
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+      // Animation for about section
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.target) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      const aboutElements = document.querySelectorAll('.about-text, .about-image');
+      aboutElements.forEach(item => {
+        if (item) {
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(30px)';
+          item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          observer.observe(item);
         }
       });
-    }, observerOptions);
 
-    const aboutElements = document.querySelectorAll('.about-text, .about-image');
-    aboutElements.forEach(item => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(30px)';
-      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(item);
-    });
-
-    return () => observer.disconnect();
+      return () => {
+        try {
+          observer.disconnect();
+        } catch (error) {
+          console.warn('Error disconnecting observer:', error);
+        }
+      };
+    } catch (error) {
+      console.error('Error in Hero useEffect:', error);
+    }
   }, []);
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offsetTop = element.offsetTop - 70;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
+    try {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offsetTop = element.offsetTop - 70;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    } catch (error) {
+      console.error('Error scrolling to section:', error);
     }
   };
 
@@ -56,7 +74,7 @@ const Hero = () => {
       <section id="home" className="hero">
         <div className="hero-content">
           <div className="hero-logo">
-            <h1 className="main-logo">BOMALÉ</h1>
+            <h1 className="main-logo">BOMA'LE</h1>
             <h2 className="sub-logo">BOUREKAS</h2>
           </div>
           <div className="hero-definitions">
@@ -82,10 +100,10 @@ const Hero = () => {
       <section id="what-is-bomale" className="what-is-bomale">
         <div className="container">
           <div className="what-is-content">
-            <h2>What is BOMALÉ?</h2>
-            <p>BOMALÉ is a modern take on Israeli bourekas. Traditionally, bourekas is a flaky, golden pastry filled with savory ingredients that's been a staple of Middle Eastern cuisine for ages.</p>
+            <h2>What is BOMA'LE?</h2>
+            <p>BOMA'LE is a modern take on Israeli bourekas. Traditionally, bourekas is a flaky, golden pastry filled with savory ingredients that's been a staple of Middle Eastern cuisine for ages.</p>
             <p>Our bourekas are handcrafted daily using honed in techniques, from dough to filling, all of our products are made with precision. Each bite delivers the perfect balance of crispy, buttery pastry and flavorful fillings that celebrate both tradition and innovation.</p>
-            <p>Whether you're discovering bourekas for the first time or grew up with them, BOMALÉ brings you an authentic taste experience that's <span className="brand-phrase">made to share. Or not.</span></p>
+            <p>Whether you're discovering bourekas for the first time or grew up with them, BOMA'LE brings you an authentic taste experience that's made to share. <span className="brand-phrase">Or not.</span></p>
           </div>
         </div>
       </section>
@@ -95,8 +113,8 @@ const Hero = () => {
           <div className="about-content">
             <div className="about-text">
               <h2>Our Story</h2>
-              <p>Started by Yarin, raised on Israeli flavors and fueled by a love for food and culture. BOMALÉ serves up a fresh twist on bourekas — flaky, stuffed pastries you'll crave, whether it's your first time or your fiftieth.</p>
-              <p>What BOMALÉ stands for: cultural roots + Miami energy. Unique flavors for both familiar and new palates. <span className="brand-phrase">Made to share. Or not.</span></p>
+              <p>Started by Yarin, raised on Israeli flavors and fueled by a love for food and culture. BOMA'LE serves up a fresh twist on bourekas — flaky, stuffed pastries you'll crave, whether it's your first time or your fiftieth.</p>
+              <p>What BOMA'LE stands for: cultural roots + Miami energy. Unique flavors for both familiar and new palates. Made to share. <span className="brand-phrase">Or not.</span></p>
             </div>
             <div className="about-image">
               <div className="boureka-illustration"></div>

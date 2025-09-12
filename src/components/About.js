@@ -33,8 +33,8 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <h2>Our Story</h2>
-            <p>Started by Yarin, raised on Israeli flavors and fueled by a love for food and culture. BOMALÉ serves up a fresh twist on bourekas — flaky, stuffed pastries you’ll crave, whether it’s your first time or your fiftieth.</p>
-            <p>What BOMALÉ stands for: cultural roots + Miami energy. Unique flavors for both familiar and new palates. <span className="brand-phrase">Made to share. Or not.</span></p>
+            <p>Started by Yarin, raised on Israeli flavors and fueled by a love for food and culture. BOMA'LE serves up a fresh twist on bourekas — flaky, stuffed pastries you'll crave, whether it's your first time or your fiftieth.</p>
+            <p>What BOMA'LE stands for: cultural roots + Miami energy. Unique flavors for both familiar and new palates. <span className="brand-phrase">Made to share. Or not.</span></p>
           </div>
           <div className="about-image">
             <div className="boureka-illustration"></div>

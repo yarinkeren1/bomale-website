@@ -98,9 +98,8 @@
 
 .definition {
     position: absolute;
-    opacity: 0.15;
+    opacity: 0.25;
     font-family: 'Open Sans', sans-serif;
-    font-size: 0.7rem;
     line-height: 1.2;
     color: var(--text-dark);
     max-width: 200px;
@@ -125,22 +124,22 @@
 
 .definition-1 {
     top: 35%;
-    left: 5%;
-    transform: translateY(-50%) rotate(-5deg);
+    left: -100%;
+    transform: translateY(-50%) rotate(0deg);
     max-width: 180px;
 }
 
 .definition-2 {
-    top: 55%;
-    left: 12%;
-    transform: translateY(-50%) rotate(3deg);
+    top: 70%;
+    left: -50%;
+    transform: translateY(-50%) rotate(0deg);
     max-width: 180px;
 }
 
 .definition-3 {
-    top: 45%;
-    right: 5%;
-    transform: translateY(-50%) rotate(-2deg);
+    top: 60%;
+    right: -100%;
+    transform: translateY(-50%) rotate(0deg);
     max-width: 180px;
 }
 
@@ -149,7 +148,7 @@
     color: var(--falu-red);
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
     line-height: 0.9;
 }
 
@@ -190,7 +189,8 @@
     color: var(--burnt-sienna);
 }
 
-/* What is BOMALÉ Section */
+
+/* What is BOMA'LE Section */
 .what-is-bomale {
     padding: 4rem 0;
     background-color: var(--white);
@@ -211,6 +211,7 @@
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
     color: var(--text-dark);
+    font-family: 'Patrick Hand SC', cursive;
 }
 
 /* About Section */
@@ -951,3 +952,4 @@
         transform: translateY(0);
     }
 }
+/* Force refresh */

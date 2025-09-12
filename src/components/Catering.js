@@ -28,7 +28,7 @@ const Catering = () => {
     <section id="catering" className="catering">
       <div className="container">
         <h2>Catering / Booking</h2>
-        <p className="catering-pitch">Planning something tasty? BOMALÉ caters private parties, corporate events, and festivals across South Florida.</p>
+        <p className="catering-pitch">Planning something tasty? BOMA'LE caters private parties, corporate events, and festivals across South Florida.</p>
         <form className="catering-form" onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
           <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />

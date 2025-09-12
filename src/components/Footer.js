@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-logo">
-            <h3>BOMALÉ</h3>
+            <h3>BOMA'LE</h3>
           </div>
           <ul className="footer-nav">
             <li><Link to="/">Home</Link></li>
@@ -22,7 +22,7 @@ const Footer = () => {
               </svg>
             </a>
           </div>
-          <p>&copy; 2025 BOMALÉ</p>
+          <p>&copy; 2025 BOMA'LE</p>
         </div>
       </div>
     </footer>
