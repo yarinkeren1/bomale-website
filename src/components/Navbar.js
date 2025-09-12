@@ -29,6 +29,7 @@ const Navbar = () => {
         </div>
         <ul className="nav-menu">
           <li><Link to="/menu">Menu</Link></li>
+          <li><Link to="/our-story">Our Story</Link></li>
           <li><Link to="/contact">Contact Us</Link></li>
         </ul>
       </div>

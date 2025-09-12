@@ -17,38 +17,6 @@ const Hero = () => {
         }, 200);
       }
 
-      // Animation for about section
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && entry.target) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, observerOptions);
-
-      const aboutElements = document.querySelectorAll('.about-text, .about-image');
-      aboutElements.forEach(item => {
-        if (item) {
-          item.style.opacity = '0';
-          item.style.transform = 'translateY(30px)';
-          item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-          observer.observe(item);
-        }
-      });
-
-      return () => {
-        try {
-          observer.disconnect();
-        } catch (error) {
-          console.warn('Error disconnecting observer:', error);
-        }
-      };
     } catch (error) {
       console.error('Error in Hero useEffect:', error);
     }
@@ -84,14 +52,14 @@ const Hero = () => {
               <div className="definition-text">(verb) To come; to approach; to arrive at a place.<br/>(preposition) Inside; within; denoting the interior of something.</div>
             </div>
             <div className="definition definition-2">
-              <div className="definition-word">Malé (adj.; adv.)</div>
+              <div className="definition-word">Ma'le (adj.; adv.)</div>
               <div className="definition-pronunciation">Pronunciation: /maˈle/</div>
               <div className="definition-text">(adjective) Abundant; full of; replete with a given quality or substance.<br/>(adverb) To a great extent; in large measure; plentifully.</div>
             </div>
             <div className="definition definition-3">
               <div className="definition-word">Bourekas (n., pl.)</div>
               <div className="definition-pronunciation">Pronunciation: /buˈre.kas/</div>
-              <div className="definition-text">(noun) A baked pastry made of thinly layered or puff pastry dough, traditionally filled with cheese, potato, spinach, eggplant, or other savory or sweet mixtures; a popular item in Middle Eastern and Sephardic Jewish cuisines.<br/>(plural form) Refers collectively to pastries of this type, often served as snacks, street food, or part of a meal.</div>
+              <div className="definition-text">(noun) A baked pastry made of thinly layered or puff pastry dough, traditionally filled with cheese, potato, spinach, eggplant, or other savory or sweet mixtures; a popular item in Middle Eastern and Sephardic Jewish cuisines.</div>
             </div>
           </div>
         </div>
@@ -103,25 +71,11 @@ const Hero = () => {
             <h2>What is BOMA'LE?</h2>
             <p>BOMA'LE is a modern take on Israeli bourekas. Traditionally, bourekas is a flaky, golden pastry filled with savory ingredients that's been a staple of Middle Eastern cuisine for ages.</p>
             <p>Our bourekas are handcrafted daily using honed in techniques, from dough to filling, all of our products are made with precision. Each bite delivers the perfect balance of crispy, buttery pastry and flavorful fillings that celebrate both tradition and innovation.</p>
-            <p>Whether you're discovering bourekas for the first time or grew up with them, BOMA'LE brings you an authentic taste experience that's made to share. <span className="brand-phrase">Or not.</span></p>
+            <p>Whether you're discovering bourekas for the first time or grew up with them, BOMA'LE brings you an authentic taste experience that's made to share. <span className="brand-phrase coming-soon-text">Or not.</span></p>
           </div>
         </div>
       </section>
       
-      <section id="about" className="about">
-        <div className="container">
-          <div className="about-content">
-            <div className="about-text">
-              <h2>Our Story</h2>
-              <p>Started by Yarin, raised on Israeli flavors and fueled by a love for food and culture. BOMA'LE serves up a fresh twist on bourekas — flaky, stuffed pastries you'll crave, whether it's your first time or your fiftieth.</p>
-              <p>What BOMA'LE stands for: cultural roots + Miami energy. Unique flavors for both familiar and new palates. Made to share. <span className="brand-phrase">Or not.</span></p>
-            </div>
-            <div className="about-image">
-              <div className="boureka-illustration"></div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section id="locations" className="locations">
         <div className="container">
@@ -152,9 +106,11 @@ const Hero = () => {
               <p>Uber Eats • DoorDash<br/>Grubhub • Postmates</p>
               <p className="hours">Available on all major delivery platforms<br/>Check your local area for availability</p>
             </div>
-          </div>
-          <div className="locations-note">
-            <p>More locations coming soon! We're expanding across Miami to bring you fresh bourekas wherever you are.</p>
+            <div className="location-item">
+              <h3>More Locations Coming Soon!</h3>
+              <p>We're expanding across Miami<br/>to bring you fresh bourekas</p>
+              <p className="hours">Stay tuned for new locations<br/>in your neighborhood</p>
+            </div>
           </div>
         </div>
       </section>

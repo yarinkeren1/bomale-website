@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Menu from './components/Menu';
 import Contact from './components/Contact';
+import OurStory from './components/OurStory';
 import Footer from './components/Footer';
 
 function App() {
@@ -29,6 +30,12 @@ function App() {
           <Route path="/contact" element={
             <>
               <Contact />
+              <Footer />
+            </>
+          } />
+          <Route path="/our-story" element={
+            <>
+              <OurStory />
               <Footer />
             </>
           } />

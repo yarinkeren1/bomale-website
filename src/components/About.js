@@ -33,8 +33,7 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <h2>Our Story</h2>
-            <p>Started by Yarin, raised on Israeli flavors and fueled by a love for food and culture. BOMA'LE serves up a fresh twist on bourekas — flaky, stuffed pastries you'll crave, whether it's your first time or your fiftieth.</p>
-            <p>What BOMA'LE stands for: cultural roots + Miami energy. Unique flavors for both familiar and new palates. <span className="brand-phrase">Made to share. Or not.</span></p>
+            <p>I moved from Israel to Miami when I was just 8 years old. Ever since, I've carried with me the flavors, traditions, and a longing of home. BOMA'LE was born from that longing to share a piece of my culture with my new community. Bourekas are a simple, yet deeply satisfying pastry, and they were without a doubt one of my favorite foods growing up in Israel. Here in Miami, I saw an opportunity to introduce them in a way that feels both familiar and new: honoring the classics like cheese and potato while creating flavors no one has tried before! To me, BOMA'LE is more than just a food truck, it's my way of sharing my culture with everyone in an authentic, approachable and delicious way.</p>
           </div>
           <div className="about-image">
             <div className="boureka-illustration"></div>
