@@ -1,30 +1,56 @@
 import React, { useEffect } from 'react';
+import ImageCarousel from './ImageCarousel';
 
 const About = () => {
   useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+    try {
+      // Check if IntersectionObserver is available
+      if (!window.IntersectionObserver) {
+        // Fallback: just show elements immediately
+        const aboutElements = document.querySelectorAll('.about-text, .about-image');
+        aboutElements.forEach(item => {
+          if (item) {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          }
+        });
+        return;
+      }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      const aboutElements = document.querySelectorAll('.about-text, .about-image');
+      aboutElements.forEach(item => {
+        if (item) {
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(30px)';
+          item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          observer.observe(item);
         }
       });
-    }, observerOptions);
 
-    const aboutElements = document.querySelectorAll('.about-text, .about-image');
-    aboutElements.forEach(item => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(30px)';
-      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(item);
-    });
-
-    return () => observer.disconnect();
+      return () => {
+        try {
+          observer.disconnect();
+        } catch (error) {
+          console.warn('Error disconnecting observer:', error);
+        }
+      };
+    } catch (error) {
+      console.warn('Error setting up About animations:', error);
+    }
   }, []);
 
   return (
@@ -38,6 +64,11 @@ const About = () => {
           <div className="about-image">
             <div className="boureka-illustration"></div>
           </div>
+        </div>
+        
+        {/* Image Carousel */}
+        <div className="about-carousel">
+          <ImageCarousel />
         </div>
       </div>
     </section>

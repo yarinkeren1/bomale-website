@@ -16,11 +16,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Coming Soon', cursive;
 }
 
 body {
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Coming Soon', cursive;
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--dutch-white);
@@ -61,7 +61,7 @@ h4 {
 p {
     margin-bottom: 1rem;
     color: var(--text-light);
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Coming Soon', cursive;
 }
 
 /* Smooth scrolling */

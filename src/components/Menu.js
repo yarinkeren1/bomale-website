@@ -5,14 +5,14 @@ const Menu = () => {
     bourekas: [
       {
         name: "Feta + Ricotta",
-        description: "A delicious mix of creamy ricotta and savory feta, lightly seasoned and baked in golden, flaky pastry. Topped with sesame seeds and served with a resek agvaniyot complement.",
+        description: "A delicious mix of creamy ricotta and savory feta, lightly seasoned and baked in golden, flaky pastry. Topped with sesame seeds and served with resek agvaniyot.",
         servedWith: "hard boiled egg, pickles & olives",
         sauceOptions: "Tahini, Garlic aioli",
         tagline: "Flaky, savory, filling. The classic done right."
       },
       {
         name: "Mashed Potatoes + Caramelized Onions",
-        description: "Creamy mashed potato mixed with golden sautéed onions and a dash of black pepper, sealed in crisp pastry. Topped with nigella seeds and served with a complement of matbucha.",
+        description: "Creamy mashed potato mixed with golden sautéed onions and a dash of black pepper, sealed in crisp pastry. Topped with nigella seeds and served with matbucha.",
         servedWith: "hard boiled egg, pickles & olives",
         sauceOptions: "Tahini, Garlic aioli",
         tagline: "Soft inside, bold outside."
@@ -26,15 +26,15 @@ const Menu = () => {
       },
       {
         name: "Nutella",
-        description: "Warm, creamy Nutella packed into flaky pastry. Topped with hazelnut crumbs and complemented by whipped cream.",
-        servedWith: "hard boiled egg, pickles & olives",
+        description: "Warm, creamy Nutella packed into flaky pastry. Topped with hazelnut crumbs and whipped cream.",
+        servedWith: "",
         sauceOptions: "Chocolate or vanilla",
         tagline: "Nutty and rich — a flavor we all know and love, delivered in a new way."
       },
       {
         name: "Baklava",
-        description: "A crunchy-sweet blend of toasted walnuts and pistachios with honey, cinnamon, and a touch of orange zest, sealed in pastry. Topped with honey and crushed pistachios, served with a complement of your choice of rose or orange blossom water",
-        servedWith: "hard boiled egg, pickles & olives",
+        description: "A crunchy-sweet blend of toasted walnuts and pistachios with honey, cinnamon, and a touch of orange zest, sealed in pastry. Topped with honey, crushed pistachios, and your choice of rose or orange blossom water",
+        servedWith: "",
         sauceOptions: "Rose or orange blossom water",
         tagline: "Sweet and crunchy — like baklava in a bourekas suit."
       },
@@ -109,10 +109,10 @@ const Menu = () => {
             <div key={index} className="menu-item">
               <h4>{item.name || 'Unnamed Item'}</h4>
               {!isSimple && item.description && (
-                <p className="menu-description">{item.description}</p>
+                <p className="menu-description coming-soon-text">{item.description}</p>
               )}
               {!isSimple && item.servedWith && (
-                <p className="served-with"><strong>Served with:</strong> {item.servedWith}</p>
+                <p className="served-with coming-soon-text"><strong className="coming-soon-text">Served with:</strong> {item.servedWith}</p>
               )}
             </div>
           ))}
@@ -135,7 +135,7 @@ const Menu = () => {
               {menuData?.savoryComplements && menuData.savoryComplements.length > 0 && menuData.savoryComplements.map((item, index) => (
                 <div key={index} className="complement-item">
                   <h4>{item?.name || 'Unnamed Item'}</h4>
-                  {item?.description && <p>{item.description}</p>}
+                  {item?.description && <p className="coming-soon-text">{item.description}</p>}
                 </div>
               ))}
             </div>
@@ -146,7 +146,7 @@ const Menu = () => {
               {menuData?.sweetComplements && menuData.sweetComplements.length > 0 && menuData.sweetComplements.map((item, index) => (
                 <div key={index} className="complement-item">
                   <h4>{item?.name || 'Unnamed Item'}</h4>
-                  {item?.description && <p>{item.description}</p>}
+                  {item?.description && <p className="coming-soon-text">{item.description}</p>}
                 </div>
               ))}
             </div>
@@ -159,7 +159,7 @@ const Menu = () => {
               {menuData.additionalSides && menuData.additionalSides.map((side, index) => (
                 <div key={index} className="side-item">
                   <h4>{side.name}</h4>
-                  {side.description && <p>{side.description}</p>}
+                  {side.description && <p className="coming-soon-text">{side.description}</p>}
                 </div>
               ))}
             </div>
@@ -167,23 +167,17 @@ const Menu = () => {
           <div className="drinks-section">
             <h3>Drinks</h3>
             <div className="drinks-list">
-              <div className="drink-subsection">
-                <h4 className="drink-subheader">Specialty Drinks</h4>
-                {menuData.specialtyDrinks && menuData.specialtyDrinks.map((drink, index) => (
-                  <div key={index} className="drink-item">
-                    <h5>{drink.name}</h5>
-                    {drink.description && <p>{drink.description}</p>}
-                  </div>
-                ))}
-              </div>
-              <div className="drink-subsection">
-                <h4 className="drink-subheader">Regular Drinks</h4>
-                {menuData.regularDrinks && menuData.regularDrinks.map((drink, index) => (
-                  <div key={index} className="drink-item">
-                    <h5>{drink.name}</h5>
-                  </div>
-                ))}
-              </div>
+              {menuData.specialtyDrinks && menuData.specialtyDrinks.map((drink, index) => (
+                <div key={`specialty-${index}`} className="drink-item">
+                  <h5>{drink.name}</h5>
+                  {drink.description && <p className="coming-soon-text">{drink.description}</p>}
+                </div>
+              ))}
+              {menuData.regularDrinks && menuData.regularDrinks.map((drink, index) => (
+                <div key={`regular-${index}`} className="drink-item">
+                  <h5>{drink.name}</h5>
+                </div>
+              ))}
             </div>
           </div>
         </div>

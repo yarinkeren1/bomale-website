@@ -45,6 +45,7 @@
     color: var(--text-dark);
     font-weight: 700;
     font-size: 1.5rem;
+    font-family: 'Amatic SC', cursive;
     transition: color 0.3s ease;
 }
 
@@ -220,6 +221,54 @@
     font-family: 'Coming Soon', cursive;
 }
 
+.what-is-content p.josefin-sans {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.what-is-carousel {
+    margin-top: 3rem;
+}
+
+.carousel-error-fallback {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dutch-white);
+    border: 2px dashed var(--falu-red);
+    border-radius: 15px;
+    color: var(--falu-red);
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
+}
+
+.error-boundary-fallback {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dutch-white);
+    border: 2px dashed var(--falu-red);
+    border-radius: 15px;
+    color: var(--falu-red);
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    padding: 2rem;
+}
+
+.error-boundary-fallback h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--falu-red);
+}
+
+.error-boundary-fallback p {
+    font-size: 1.2rem;
+    color: var(--chocolate);
+    margin: 0;
+}
+
 /* About Section */
 .about {
     padding: 5rem 0;
@@ -273,6 +322,11 @@
     justify-content: center;
 }
 
+.about-carousel {
+    margin-top: 4rem;
+    grid-column: 1 / -1;
+}
+
 .boureka-illustration {
     width: 300px;
     height: 300px;
@@ -302,6 +356,7 @@
     text-align: center;
     color: var(--falu-red);
     margin-bottom: 1rem;
+    font-size: 4rem;
 }
 
 .menu-subtitle {
@@ -323,6 +378,7 @@
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 3px solid var(--hunyadi-yellow);
+    font-size: 1.875rem;
 }
 
 .menu-items {
@@ -372,7 +428,7 @@
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 3px solid var(--hunyadi-yellow);
-    font-size: 1.5rem;
+    font-size: 1.875rem;
 }
 
 .complements-list {
@@ -423,7 +479,7 @@
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 3px solid var(--hunyadi-yellow);
-    font-size: 1.5rem;
+    font-size: 1.875rem;
 }
 
 .sides-list {
@@ -495,6 +551,7 @@
     color: var(--falu-red);
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
+    font-family: 'Amatic SC', cursive;
 }
 
 .menu-desc {
@@ -569,7 +626,7 @@
 .location-item h3 {
     color: var(--chocolate);
     margin-bottom: 1rem;
-    font-size: 1.3rem;
+    font-size: 2.2rem !important;
 }
 
 .location-item p {
@@ -676,13 +733,51 @@
 .contact h2 {
     text-align: center;
     color: var(--falu-red);
+    margin-bottom: 2rem;
+}
+
+.contact-header {
+    text-align: center;
     margin-bottom: 3rem;
 }
 
+.contact-intro {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.contact-info-section,
+.contact-form-section,
+.catering-info-section,
+.social-section {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.contact-info-section h3,
+.contact-form-section h3,
+.catering-info-section h3,
+.social-section h3 {
+    color: var(--chocolate);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-info-section p {
+    color: var(--text-light);
+    font-size: 1.1rem;
 }
 
 .contact-item {
@@ -733,20 +828,151 @@
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
     width: 100%;
     padding: 1rem;
     margin-bottom: 1rem;
     border: 2px solid var(--dutch-white);
     border-radius: 10px;
-    font-family: inherit;
+    font-family: 'Coming Soon', cursive;
     transition: border-color 0.3s ease;
 }
 
 .contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.contact-form select:focus {
     outline: none;
     border-color: var(--falu-red);
+}
+
+.contact-form-section input,
+.contact-form-section textarea,
+.contact-form-section select {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--dutch-white);
+    border-radius: 10px;
+    font-family: 'Coming Soon', cursive;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form-section input:focus,
+.contact-form-section textarea:focus,
+.contact-form-section select:focus {
+    outline: none;
+    border-color: var(--falu-red);
+}
+
+.contact-form-section input::placeholder,
+.contact-form-section textarea::placeholder {
+    font-family: 'Coming Soon', cursive;
+    color: var(--text-light);
+}
+
+.form-success {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 10px;
+    color: #155724;
+}
+
+.form-success p {
+    margin: 0;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.form-error {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 10px;
+    color: #721c24;
+}
+
+.form-error p {
+    margin: 0;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    font-family: 'Coming Soon', cursive;
+    color: var(--text-light);
+}
+
+.catering-info-section p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--falu-red);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--chocolate);
+    transform: translateY(-2px);
+    color: var(--white);
+}
+
+.social-link-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Jiggle Animation */
+@keyframes jiggle {
+    0%, 100% { 
+        transform: translateX(0); 
+    }
+    20% { 
+        transform: translateX(-4px); 
+    }
+    40% { 
+        transform: translateX(4px); 
+    }
+    60% { 
+        transform: translateX(-3px); 
+    }
+    80% { 
+        transform: translateX(3px); 
+    }
+}
+
+.contact-form-section input.jiggle,
+.contact-form-section textarea.jiggle,
+.contact-form-section select.jiggle,
+.contact-form input.jiggle,
+.contact-form textarea.jiggle,
+.contact-form select.jiggle {
+    animation: jiggle 0.4s ease-in-out !important;
+    border-color: var(--falu-red) !important;
+    border-width: 2px !important;
+    box-shadow: 0 0 0 2px rgba(126, 38, 38, 0.2) !important;
+    background-color: rgba(126, 38, 38, 0.05) !important;
 }
 
 /* Catering Section */
@@ -774,7 +1000,7 @@
     margin-bottom: 1rem;
     border: 2px solid var(--dutch-white);
     border-radius: 10px;
-    font-family: inherit;
+    font-family: 'Coming Soon', cursive;
     transition: border-color 0.3s ease;
 }
 
@@ -806,7 +1032,7 @@
 
 .footer-logo h3 {
     color: var(--white);
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
 
@@ -824,6 +1050,9 @@
     color: var(--dutch-white);
     text-decoration: none;
     transition: color 0.3s ease;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .footer-nav a:hover {
@@ -843,6 +1072,9 @@
 .footer p {
     color: var(--dutch-white);
     margin-top: 0.5rem;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
 /* Buttons */
@@ -983,4 +1215,142 @@
         transform: translateY(0);
     }
 }
+/* Image Carousel */
+.image-carousel {
+  margin: 3rem 0;
+  padding: 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 36s linear infinite;
+  width: 600%; /* 6 sets of 3 images = 18 images total */
+  gap: 0; /* No gaps between images */
+  align-items: stretch; /* Ensure all images same height */
+}
+
+.carousel-slide {
+  width: 5.56%; /* 100% / 18 images = 5.56% each */
+  position: relative;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: stretch; /* Ensure all slides same height */
+  height: 250px; /* Reduced height for smaller images */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move by exactly half (9 images) for perfect 123 loop */
+  }
+}
+
+.carousel-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* Crop to match height */
+  object-position: center;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+.carousel-image-placeholder {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, var(--dutch-white), var(--hunyadi-yellow));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--falu-red);
+}
+
+.placeholder-content {
+  text-align: center;
+  color: var(--falu-red);
+}
+
+.placeholder-content h3 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--falu-red);
+}
+
+.placeholder-content p {
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.2rem;
+  color: var(--chocolate);
+  margin: 0;
+}
+
+/* Captions removed for continuous scroll effect */
+
+/* Navigation removed for continuous scroll effect */
+
+/* Responsive carousel */
+@media (max-width: 768px) {
+  .carousel-image {
+    height: 200px;
+  }
+  
+  .carousel-slide {
+    height: 200px;
+  }
+  
+  .carousel-image-placeholder {
+    height: 200px;
+  }
+  
+  .carousel-error-fallback {
+    height: 200px;
+  }
+  
+  .carousel-track {
+    animation-duration: 30s; /* Slightly faster on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-image {
+    height: 150px;
+  }
+  
+  .carousel-slide {
+    height: 150px;
+  }
+  
+  .carousel-image-placeholder {
+    height: 150px;
+  }
+  
+  .carousel-error-fallback {
+    height: 150px;
+  }
+  
+  .carousel-track {
+    animation-duration: 25s; /* Even faster on small screens */
+  }
+}
+
 /* Force refresh */

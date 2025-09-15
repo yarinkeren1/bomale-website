@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import ImageCarousel from './ImageCarousel';
+import ErrorBoundary from './ErrorBoundary';
 
 const Hero = () => {
   useEffect(() => {
@@ -8,17 +10,20 @@ const Hero = () => {
         heroContent.style.opacity = '0';
         heroContent.style.transform = 'translateY(20px)';
 
-        setTimeout(() => {
+        const timeoutId = setTimeout(() => {
           if (heroContent) {
             heroContent.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
             heroContent.style.opacity = '1';
             heroContent.style.transform = 'translateY(0)';
           }
         }, 200);
-      }
 
+        return () => {
+          clearTimeout(timeoutId);
+        };
+      }
     } catch (error) {
-      console.error('Error in Hero useEffect:', error);
+      console.warn('Error in Hero useEffect:', error);
     }
   }, []);
 
@@ -73,6 +78,13 @@ const Hero = () => {
             <p>Our bourekas are handcrafted daily using honed in techniques, from dough to filling, all of our products are made with precision. Each bite delivers the perfect balance of crispy, buttery pastry and flavorful fillings that celebrate both tradition and innovation.</p>
             <p>Whether you're discovering bourekas for the first time or grew up with them, BOMA'LE brings you an authentic taste experience that's made to share. <span className="brand-phrase coming-soon-text">Or not.</span></p>
           </div>
+          
+          {/* Image Carousel */}
+          <div className="what-is-carousel">
+            <ErrorBoundary>
+              <ImageCarousel />
+            </ErrorBoundary>
+          </div>
         </div>
       </section>
       
@@ -83,33 +95,33 @@ const Hero = () => {
           <div className="locations-grid">
             <div className="location-item">
               <h3>Wynwood Arts District</h3>
-              <p>2550 NW 2nd Ave<br/>Miami, FL 33127</p>
-              <p className="hours">Mon-Sat: 8AM-6PM<br/>Sun: 9AM-4PM</p>
+              <p className="coming-soon-text">2550 NW 2nd Ave<br/>Miami, FL 33127</p>
+              <p className="hours coming-soon-text">Mon-Sat: 8AM-6PM<br/>Sun: 9AM-4PM</p>
             </div>
             <div className="location-item">
               <h3>Brickell City Centre</h3>
-              <p>701 S Miami Ave<br/>Miami, FL 33131</p>
-              <p className="hours">Mon-Fri: 7AM-8PM<br/>Sat-Sun: 8AM-7PM</p>
+              <p className="coming-soon-text">701 S Miami Ave<br/>Miami, FL 33131</p>
+              <p className="hours coming-soon-text">Mon-Fri: 7AM-8PM<br/>Sat-Sun: 8AM-7PM</p>
             </div>
             <div className="location-item">
               <h3>South Beach</h3>
-              <p>1200 Ocean Dr<br/>Miami Beach, FL 33139</p>
-              <p className="hours">Daily: 8AM-10PM</p>
+              <p className="coming-soon-text">1200 Ocean Dr<br/>Miami Beach, FL 33139</p>
+              <p className="hours coming-soon-text">Daily: 8AM-10PM</p>
             </div>
             <div className="location-item">
               <h3>Coral Gables</h3>
-              <p>2501 Ponce de Leon Blvd<br/>Coral Gables, FL 33134</p>
-              <p className="hours">Mon-Sat: 7AM-7PM<br/>Sun: 8AM-5PM</p>
+              <p className="coming-soon-text">2501 Ponce de Leon Blvd<br/>Coral Gables, FL 33134</p>
+              <p className="hours coming-soon-text">Mon-Sat: 7AM-7PM<br/>Sun: 8AM-5PM</p>
             </div>
             <div className="location-item">
               <h3>Order Online</h3>
-              <p>Uber Eats • DoorDash<br/>Grubhub • Postmates</p>
-              <p className="hours">Available on all major delivery platforms<br/>Check your local area for availability</p>
+              <p className="coming-soon-text">Uber Eats • DoorDash<br/>Grubhub • Postmates</p>
+              <p className="hours coming-soon-text">Available on all major delivery platforms<br/>Check your local area for availability</p>
             </div>
             <div className="location-item">
               <h3>More Locations Coming Soon!</h3>
-              <p>We're expanding across Miami<br/>to bring you fresh bourekas</p>
-              <p className="hours">Stay tuned for new locations<br/>in your neighborhood</p>
+              <p className="coming-soon-text">We're expanding across Miami<br/>to bring you fresh bourekas</p>
+              <p className="hours coming-soon-text">Stay tuned for new locations<br/>in your neighborhood</p>
             </div>
           </div>
         </div>

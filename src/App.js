@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import { Analytics } from '@vercel/analytics/react';
+// import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Menu from './components/Menu';
@@ -40,7 +40,7 @@ function App() {
             </>
           } />
         </Routes>
-        <Analytics />
+        {/* <Analytics /> */}
       </div>
     </Router>
   );
