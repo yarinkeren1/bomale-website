@@ -1127,6 +1127,7 @@
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 2rem 0;
+        z-index: 999;
     }
 
     .nav-menu.active {
@@ -1144,6 +1145,10 @@
     .hero-content {
         max-width: 100%;
         padding: 1rem;
+    }
+
+    .hero-definitions {
+        display: none; /* Hide definitions on mobile to prevent overflow */
     }
 
     .main-logo {
@@ -1186,8 +1191,29 @@
         padding: 0 15px;
     }
 
+    .nav-container {
+        padding: 0 15px;
+        gap: 1rem;
+    }
+
+    .nav-logo h1 {
+        font-size: 2.5rem;
+    }
+
     .main-logo {
         font-size: 4rem;
+    }
+
+    .sub-logo {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    .pitch {
+        font-size: 1rem;
     }
 
     .btn {
@@ -1201,6 +1227,16 @@
 
     .contact-form {
         padding: 1.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 200px;
     }
 }
 
