@@ -6,12 +6,12 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleNavClick = (path) => {
+    // Close mobile menu when clicking a link
+    setIsMenuOpen(false);
     // If clicking on the current page, scroll to top
     if (location.pathname === path) {
       window.scrollTo(0, 0);
     }
-    // Close mobile menu when clicking a link
-    setIsMenuOpen(false);
   };
 
   const toggleMenu = () => {
@@ -30,9 +30,11 @@ const Navbar = () => {
           navbar.style.backdropFilter = 'none';
         }
       }
+      // Close mobile menu when scrolling
+      setIsMenuOpen(false);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
