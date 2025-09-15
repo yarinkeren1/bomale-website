@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ImageCarousel = () => {
+  const [imageLoadStates, setImageLoadStates] = useState({});
+  
   // Image data - using your actual food images
   const images = [
     {
@@ -39,28 +41,35 @@ const ImageCarousel = () => {
     ...images  // 123
   ];
 
+  // Initialize image load states
+  useEffect(() => {
+    const initialStates = {};
+    repeatedImages.forEach((_, index) => {
+      initialStates[index] = 'loading';
+    });
+    setImageLoadStates(initialStates);
+  }, []);
+
   // Error handler for images
   const handleImageError = (e, index) => {
     try {
       console.warn(`Image failed to load: ${e.target.src}`);
-      e.target.style.display = 'none';
-      const placeholder = e.target.nextSibling;
-      if (placeholder) {
-        placeholder.style.display = 'flex';
-      }
+      setImageLoadStates(prev => ({
+        ...prev,
+        [index]: 'error'
+      }));
     } catch (error) {
       console.error('Error handling image load failure:', error);
     }
   };
 
   // Error handler for image load
-  const handleImageLoad = (e) => {
+  const handleImageLoad = (e, index) => {
     try {
-      e.target.style.display = 'block';
-      const placeholder = e.target.nextSibling;
-      if (placeholder) {
-        placeholder.style.display = 'none';
-      }
+      setImageLoadStates(prev => ({
+        ...prev,
+        [index]: 'loaded'
+      }));
     } catch (error) {
       console.error('Error handling image load success:', error);
     }
@@ -71,24 +80,33 @@ const ImageCarousel = () => {
       <div className="image-carousel">
         <div className="carousel-container">
           <div className="carousel-track">
-            {repeatedImages.map((image, index) => (
-              <div key={`${image.src}-${index}`} className="carousel-slide">
-                <img 
-                  src={image.src} 
-                  alt={image.alt}
-                  className="carousel-image"
-                  onError={(e) => handleImageError(e, index)}
-                  onLoad={handleImageLoad}
-                  loading="lazy"
-                />
-                <div className="carousel-image-placeholder" style={{display: 'none'}}>
-                  <div className="placeholder-content">
-                    <h3>{image.title}</h3>
-                    <p>Image loading...</p>
-                  </div>
+            {repeatedImages.map((image, index) => {
+              const loadState = imageLoadStates[index];
+              const showPlaceholder = loadState === 'error' || loadState === undefined;
+              
+              return (
+                <div key={`${image.src}-${index}`} className="carousel-slide">
+                  {!showPlaceholder && (
+                    <img 
+                      src={image.src} 
+                      alt={image.alt}
+                      className="carousel-image"
+                      onError={(e) => handleImageError(e, index)}
+                      onLoad={(e) => handleImageLoad(e, index)}
+                      loading="lazy"
+                    />
+                  )}
+                  {showPlaceholder && (
+                    <div className="carousel-image-placeholder">
+                      <div className="placeholder-content">
+                        <h3>{image.title}</h3>
+                        <p>{loadState === 'error' ? 'Image unavailable' : 'Image loading...'}</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import React from 'react';
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { hasError: false, error: null };
+    this.state = { hasError: false, error: null, errorInfo: null };
   }
 
   static getDerivedStateFromError(error) {
@@ -14,6 +14,7 @@ class ErrorBoundary extends React.Component {
   componentDidCatch(error, errorInfo) {
     // Log the error to console
     console.error('ErrorBoundary caught an error:', error, errorInfo);
+    this.setState({ errorInfo });
   }
 
   render() {
@@ -23,6 +24,14 @@ class ErrorBoundary extends React.Component {
         <div className="error-boundary-fallback">
           <h3>Something went wrong with the image carousel</h3>
           <p>Please refresh the page to try again.</p>
+          {/* Optional: Display error details in development */}
+          {process.env.NODE_ENV === 'development' && this.state.error && (
+            <details style={{ whiteSpace: 'pre-wrap', textAlign: 'left', marginTop: '1rem', maxWidth: '90%' }}>
+              {this.state.error && this.state.error.toString()}
+              <br />
+              {this.state.errorInfo && this.state.errorInfo.componentStack}
+            </details>
+          )}
         </div>
       );
     }
