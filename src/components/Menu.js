@@ -5,7 +5,7 @@ const Menu = () => {
     bourekas: [
       {
         name: "Feta + Ricotta",
-        description: "A delicious mix of creamy ricotta and savory feta, lightly seasoned and baked in golden, flaky pastry. Topped with sesame seeds and served with resek agvaniyot.",
+        description: "A delicious mix of creamy ricotta and savory feta, lightly seasoned, baked in golden, crunchy pastry and topped with toasted sesame seeds",
         servedWith: "hard boiled egg, pickles & olives",
         sauceOptions: "Tahini, Garlic aioli",
         tagline: "Flaky, savory, filling. The classic done right."
