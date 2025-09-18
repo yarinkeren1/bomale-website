@@ -419,6 +419,21 @@
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     text-align: center;
+    align-items: start;
+}
+
+.savory-complements,
+.sweet-complements {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.complements-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .savory-complements h3,
@@ -431,11 +446,6 @@
     font-size: 1.875rem;
 }
 
-.complements-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
 
 .complement-item {
     color: var(--text-dark);
