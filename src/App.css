@@ -478,6 +478,24 @@
     white-space: pre-line;
 }
 
+/* Menu note section */
+.menu-note {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--dutch-white);
+    border: 2px solid var(--hunyadi-yellow);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.menu-note p {
+    color: var(--chocolate);
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
 .additional-sections {
     margin-top: 3rem;
     display: grid;

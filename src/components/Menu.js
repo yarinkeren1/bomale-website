@@ -181,6 +181,9 @@ const Menu = () => {
             </div>
           </div>
         </div>
+        <div className="menu-note">
+          <p>All savory bourekas are served with a hard-boiled egg, pickles & olives, resek agvaniyot, and your choice of schug or tahini.</p>
+        </div>
       </div>
     </section>
   );
