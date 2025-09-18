@@ -128,6 +128,9 @@ const Menu = () => {
         <div className="menu-categories">
           <MenuCategory title="Bourekas" items={menuData?.bourekas} />
         </div>
+        <div className="menu-note">
+          <p>All savory bourekas are served with a hard-boiled egg, pickles & olives, resek agvaniyot, and your choice of schug or tahini.</p>
+        </div>
         <div className="complements-sections">
           <div className="savory-complements">
             <h3>Savory Complements</h3>
@@ -180,9 +183,6 @@ const Menu = () => {
               ))}
             </div>
           </div>
-        </div>
-        <div className="menu-note">
-          <p>All savory bourekas are served with a hard-boiled egg, pickles & olives, resek agvaniyot, and your choice of schug or tahini.</p>
         </div>
       </div>
     </section>
