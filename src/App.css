@@ -433,7 +433,11 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.sweet-complements .complements-list {
+    margin-top: 5rem;
 }
 
 .savory-complements h3,
