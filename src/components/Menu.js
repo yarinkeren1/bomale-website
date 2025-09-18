@@ -33,9 +33,9 @@ const Menu = () => {
       },
       {
         name: "Baklava",
-        description: "A crunchy-sweet blend of toasted walnuts and pistachios with honey, cinnamon, and a touch of orange zest, sealed in pastry. Topped with honey, crushed pistachios, and your choice of rose or orange blossom water",
+        description: "A crunchy-sweet blend of toasted walnuts and pistachios with honey, cinnamon, and a touch of orange zest, sealed in pastry. Topped with honey, crushed pistachios, and rose water",
         servedWith: "",
-        sauceOptions: "Rose or orange blossom water",
+        sauceOptions: "Rose water",
         tagline: "Sweet and crunchy — like baklava in a bourekas suit."
       },
       {
@@ -53,7 +53,6 @@ const Menu = () => {
     ],
     sweetComplements: [
       { name: "Whipped Cream", description: "Light and airy, cooling, the perfect soft contrast to pastry.\nPairs best with: Nutella + hazelnut boureka" },
-      { name: "Orange Blossom Water Syrup", description: "Floral and aromatic, with a sweet Middle Eastern fragrance.\nPairs best with: Baklava boureka" },
       { name: "Rose Water Syrup", description: "Elegant and fragrant, with a subtle floral essence.\nPairs best with: Baklava boureka" }
     ],
     additionalSides: [
