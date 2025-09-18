@@ -48,7 +48,7 @@ const Menu = () => {
     ],
     savoryComplements: [
       { name: "Tahini", description: "Creamy sesame paste, rich and nutty, with a lemony tang.\nPairs best with: Eggplant boureka" },
-      { name: "Green Schug", description: "Bright cilantro-chili Yemeni sauce with garlic, lemon & warm spices" },
+      { name: "Green Schug", description: "A bright cilantro–jalapeño Yemeni sauce layered with garlic, lemon, and warm spices. Fresh herbs keep it vibrant, while jalapeños bring a clean, fiery heat" },
       { name: "Resek Agvaniyot", description: "Freshly grated tomato, juicy and pulpy.\nPairs best with: Cheese boureka" }
     ],
     sweetComplements: [
