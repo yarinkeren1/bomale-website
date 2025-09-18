@@ -487,9 +487,10 @@
 
 .menu-note p {
     color: var(--chocolate);
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin: 0;
     font-weight: 400;
+    font-style: normal;
     line-height: 1.5;
 }
 
