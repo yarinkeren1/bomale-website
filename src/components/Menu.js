@@ -33,7 +33,7 @@ const Menu = () => {
       },
       {
         name: "Baklava",
-        description: "A crunchy-sweet blend of toasted walnuts and pistachios with honey, cinnamon, and a touch of orange zest, sealed in pastry. Topped with honey, crushed pistachios, and rose water",
+        description: "A crunchy-sweet blend of toasted walnuts and pistachios with honey, cinnamon, and a touch of orange zest, sealed in pastry. Topped with honey, crushed pistachios, and a side of rose water syrup",
         servedWith: "",
         sauceOptions: "Rose water",
         tagline: "Sweet and crunchy — like baklava in a bourekas suit."
