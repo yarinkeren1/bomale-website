@@ -26,7 +26,7 @@ const Menu = () => {
       },
       {
         name: "Nutella",
-        description: "Warm, creamy Nutella packed into flaky pastry. Topped with hazelnut crumbs and whipped cream.",
+        description: "Warm, creamy Nutella packed into flaky pastry. Topped with a decadent chocolate sauce and hazelnut",
         servedWith: "",
         sauceOptions: "Chocolate or vanilla",
         tagline: "Nutty and rich — a flavor we all know and love, delivered in a new way."
