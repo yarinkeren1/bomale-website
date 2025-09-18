@@ -6,21 +6,21 @@ const Menu = () => {
       {
         name: "Feta + Ricotta",
         description: "A delicious mix of creamy ricotta and savory feta, lightly seasoned, baked in golden, crunchy pastry and topped with toasted sesame seeds",
-        servedWith: "hard boiled egg, pickles & olives",
+        servedWith: "",
         sauceOptions: "Tahini, Garlic aioli",
         tagline: "Flaky, savory, filling. The classic done right."
       },
       {
         name: "Mashed Potatoes + Caramelized Onions",
         description: "Creamy mashed potato mixed with golden sautéed onions and a dash of black pepper, sealed in crisp pastry and topped with nigella seeds.",
-        servedWith: "hard boiled egg, pickles & olives",
+        servedWith: "",
         sauceOptions: "Tahini, Garlic aioli",
         tagline: "Soft inside, bold outside."
       },
       {
         name: "Roasted Eggplant + Za'atar and Tahini",
         description: "Roasted eggplant mashed with tahini, lemon, and garlic, spiced with za'atar and chili flakes. Topped with za'atar spices and a drizzle of tahini.",
-        servedWith: "hard boiled egg, pickles & olives",
+        servedWith: "",
         sauceOptions: "Tahini, Garlic aioli",
         tagline: "Smoky, tangy, herby — loaded with flavor."
       },
