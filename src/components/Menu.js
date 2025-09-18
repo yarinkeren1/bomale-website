@@ -12,7 +12,7 @@ const Menu = () => {
       },
       {
         name: "Mashed Potatoes + Caramelized Onions",
-        description: "Creamy mashed potato mixed with golden sautéed onions and a dash of black pepper, sealed in crisp pastry. Topped with nigella seeds and served with matbucha.",
+        description: "Creamy mashed potato mixed with golden sautéed onions and a dash of black pepper, sealed in crisp pastry and topped with nigella seeds.",
         servedWith: "hard boiled egg, pickles & olives",
         sauceOptions: "Tahini, Garlic aioli",
         tagline: "Soft inside, bold outside."
