@@ -48,7 +48,7 @@ const Menu = () => {
     ],
     savoryComplements: [
       { name: "Tahini", description: "Creamy sesame paste, rich and nutty, with a lemony tang.\nPairs best with: Eggplant boureka" },
-      { name: "Matbucha", description: "Slow-cooked tomatoes and peppers, sweet, smoky, and a little spicy.\nPairs best with: Potato boureka" },
+      { name: "Green Schug", description: "Bright cilantro-chili Yemeni sauce with garlic, lemon & warm spices" },
       { name: "Resek Agvaniyot", description: "Freshly grated tomato, juicy and pulpy.\nPairs best with: Cheese boureka" }
     ],
     sweetComplements: [
@@ -58,6 +58,7 @@ const Menu = () => {
     ],
     additionalSides: [
       { name: "Israeli salad", description: "Diced mix of juicy tomatoes, crisp cucumbers, sharp onions, and fresh parsley — tossed in lemon juice, olive oil, salt, and pepper." },
+      { name: "Matbucha", description: "Slow-cooked tomatoes and peppers, sweet, smoky, and a little spicy." },
       { name: "Hard-Boiled Egg", description: "Gently steam-cooked and served as a classic side" },
       { name: "Pickles & Olives", description: "Mix of briny olives and traditional Israeli-style pickles." }
     ],
