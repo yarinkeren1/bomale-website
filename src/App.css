@@ -481,18 +481,15 @@
 /* Menu note section */
 .menu-note {
     margin-top: 3rem;
-    padding: 2rem;
-    background-color: var(--dutch-white);
-    border: 2px solid var(--hunyadi-yellow);
-    border-radius: 15px;
-    text-align: center;
+    padding: 1rem 0;
+    text-align: left;
 }
 
 .menu-note p {
     color: var(--chocolate);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     margin: 0;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1.5;
 }
 
