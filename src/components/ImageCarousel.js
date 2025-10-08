@@ -4,36 +4,49 @@ const ImageCarousel = () => {
   const [imageLoadStates, setImageLoadStates] = useState({});
   
   // Image data - staggered by type to avoid grouping
+  // Each image can have custom width/height to override defaults
   const images = [
     {
       src: '/images/food/baklava-1.JPG',
       alt: 'Golden baklava pastries drizzled with syrup and topped with pistachios',
-      title: 'Traditional Baklava'
+      title: 'Traditional Baklava',
+      customWidth: null,  // null = use default
+      customHeight: null  // null = use default
     },
     {
       src: '/images/food/cheese-2.JPG',
       alt: 'Golden cheese bourekas with sesame seeds',
-      title: 'Cheese Bourekas'
+      title: 'Cheese Bourekas',
+      customWidth: null,
+      customHeight: null
     },
     {
       src: '/images/food/cheese-1.JPG',
       alt: 'Cheese bourekas with flaky pastry layers',
-      title: 'Cheese Bourekas Classic'
+      title: 'Cheese Bourekas Classic',
+      customWidth: null,
+      customHeight: null
     },
     {
       src: '/images/food/chocolate-1.JPG',
       alt: 'Chocolate pastry with hazelnuts and chocolate drizzle',
-      title: 'Chocolate Pastry'
+      title: 'Chocolate Pastry',
+      customWidth: null,
+      customHeight: null
     },
     {
       src: '/images/food/baklava-2.JPG',
       alt: 'Syrupy baklava pieces with chopped pistachios',
-      title: 'Pistachio Baklava'
+      title: 'Pistachio Baklava',
+      customWidth: null,
+      customHeight: null
     },
     {
       src: '/images/food/chocolate-2.JPG',
       alt: 'Chocolate pastry with whipped cream and nuts',
-      title: 'Chocolate Dessert'
+      title: 'Chocolate Dessert',
+      customWidth: null,
+      customHeight: null
     }
   ];
 
@@ -92,6 +105,16 @@ const ImageCarousel = () => {
               const loadState = imageLoadStates[index];
               const showPlaceholder = loadState === 'error' || loadState === undefined;
               const isBourekas = /bourekas/i.test(image.title) || /bourekas/i.test(image.alt) || /bourekas/i.test(image.src);
+              const isPistachioBaklava = /baklava-2\.JPG$/i.test(image.src);
+              
+              // Build custom style object for this image
+              const customStyle = {};
+              if (image.customWidth !== null) {
+                customStyle.width = `${image.customWidth}px`;
+              }
+              if (image.customHeight !== null) {
+                customStyle.height = `${image.customHeight}px`;
+              }
               
               return (
                 <div key={`${image.src}-${index}`} className="carousel-slide">
@@ -101,7 +124,8 @@ const ImageCarousel = () => {
                       alt={image.alt}
                       width={5568}
                       height={3712}
-                      className={`carousel-image ${isBourekas ? 'bourekas' : ''}`}
+                      className={`carousel-image ${isBourekas ? 'bourekas' : ''} ${isPistachioBaklava ? 'pistachio-baklava-cover' : ''}`}
+                      style={Object.keys(customStyle).length > 0 ? customStyle : undefined}
                       onError={(e) => handleImageError(e, index)}
                       onLoad={(e) => handleImageLoad(e, index)}
                       loading="lazy"

@@ -1334,6 +1334,26 @@
   padding: 0;
 }
 
+.carousel-container::before,
+.carousel-container::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--white);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.carousel-container::before {
+  top: 0;
+}
+
+.carousel-container::after {
+  bottom: 0;
+}
+
 .carousel-track {
   display: flex;
   animation: scroll 36s linear infinite;
@@ -1352,7 +1372,7 @@
   display: flex;
   align-items: center; /* center vertically */
   justify-content: center; /* center horizontally */
-  aspect-ratio: 5568 / 3712; /* Maintain 5568×3712 proportions */
+  /* aspect-ratio removed - allows flexible image sizing */
 }
 
 @keyframes scroll {
@@ -1376,16 +1396,16 @@
   padding: 0;
   border: none;
   outline: none;
-  aspect-ratio: 5568 / 3712;
+  /* aspect-ratio removed - allows custom sizing via inline styles */
 }
 
 /* Force baklava-1 to use cover to match visual height precisely */
-.carousel-image.baklava1-cover {
+.carousel-image.pistachio-baklava-cover {
   width: 100%;
   height: 100%;
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* match others; no crop */
+  object-fit: cover; /* crop to match height alignment */
 }
 
 /* Removed special-case sizing so all images share identical height */
@@ -1393,7 +1413,7 @@
 .carousel-image-placeholder {
   width: 100%;
   height: 100%;
-  aspect-ratio: 5568 / 3712;
+  /* aspect-ratio removed - allows flexible sizing */
   background: linear-gradient(135deg, var(--dutch-white), var(--hunyadi-yellow));
   display: flex;
   align-items: center;
