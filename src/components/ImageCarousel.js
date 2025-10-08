@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const ImageCarousel = () => {
   const [imageLoadStates, setImageLoadStates] = useState({});
   
-  // Image data - using your actual food images
+  // Image data - staggered by type to avoid grouping
   const images = [
     {
       src: '/images/food/israeli-salad.jpg',
@@ -11,24 +11,9 @@ const ImageCarousel = () => {
       title: 'Israeli Salad'
     },
     {
-      src: '/images/food/chocolate-baklava.jpeg',
-      alt: 'Golden baklava pastries with pistachios and chocolate drizzle',
-      title: 'Chocolate Baklava'
-    },
-    {
-      src: '/images/food/eggplant.jpeg',
-      alt: 'Savory eggplant bourekas with creamy sauce and sesame seeds',
-      title: 'Eggplant Bourekas'
-    },
-    {
       src: '/images/food/baklava-1.JPG',
       alt: 'Golden baklava pastries drizzled with syrup and topped with pistachios',
       title: 'Traditional Baklava'
-    },
-    {
-      src: '/images/food/baklava-2.JPG',
-      alt: 'Syrupy baklava pieces with chopped pistachios',
-      title: 'Pistachio Baklava'
     },
     {
       src: '/images/food/cheese-2.JPG',
@@ -36,19 +21,39 @@ const ImageCarousel = () => {
       title: 'Cheese Bourekas'
     },
     {
-      src: '/images/food/cheese-bourekas-egg.JPG',
-      alt: 'Cheese bourekas served with hard-boiled eggs and sauces',
-      title: 'Cheese Bourekas Plate'
-    },
-    {
       src: '/images/food/chocolate-1.JPG',
       alt: 'Chocolate pastry with hazelnuts and chocolate drizzle',
       title: 'Chocolate Pastry'
     },
     {
+      src: '/images/food/eggplant.jpeg',
+      alt: 'Savory eggplant bourekas with creamy sauce and sesame seeds',
+      title: 'Eggplant Bourekas'
+    },
+    {
+      src: '/images/food/baklava-2.JPG',
+      alt: 'Syrupy baklava pieces with chopped pistachios',
+      title: 'Pistachio Baklava'
+    },
+    {
+      src: '/images/food/cheese-bourekas-egg.JPG',
+      alt: 'Cheese bourekas served with hard-boiled eggs and sauces',
+      title: 'Cheese Bourekas Plate'
+    },
+    {
       src: '/images/food/chocolate-2.JPG',
       alt: 'Chocolate pastry with whipped cream and nuts',
       title: 'Chocolate Dessert'
+    },
+    {
+      src: '/images/food/chocolate-baklava.jpeg',
+      alt: 'Golden baklava pastries with pistachios and chocolate drizzle',
+      title: 'Chocolate Baklava'
+    },
+    {
+      src: '/images/food/sauces-salad.HEIC',
+      alt: 'Fresh salads and sauces with herbs and vegetables',
+      title: 'Sauces & Salads'
     }
   ];
 
