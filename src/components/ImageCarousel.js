@@ -6,11 +6,6 @@ const ImageCarousel = () => {
   // Image data - staggered by type to avoid grouping
   const images = [
     {
-      src: '/images/food/israeli-salad.jpg',
-      alt: 'Fresh Israeli salad with tomatoes, cucumbers, and herbs',
-      title: 'Israeli Salad'
-    },
-    {
       src: '/images/food/baklava-1.JPG',
       alt: 'Golden baklava pastries drizzled with syrup and topped with pistachios',
       title: 'Traditional Baklava'
@@ -26,11 +21,6 @@ const ImageCarousel = () => {
       title: 'Chocolate Pastry'
     },
     {
-      src: '/images/food/eggplant.jpeg',
-      alt: 'Savory eggplant bourekas with creamy sauce and sesame seeds',
-      title: 'Eggplant Bourekas'
-    },
-    {
       src: '/images/food/baklava-2.JPG',
       alt: 'Syrupy baklava pieces with chopped pistachios',
       title: 'Pistachio Baklava'
@@ -44,11 +34,6 @@ const ImageCarousel = () => {
       src: '/images/food/chocolate-2.JPG',
       alt: 'Chocolate pastry with whipped cream and nuts',
       title: 'Chocolate Dessert'
-    },
-    {
-      src: '/images/food/chocolate-baklava.jpeg',
-      alt: 'Golden baklava pastries with pistachios and chocolate drizzle',
-      title: 'Chocolate Baklava'
     },
     {
       src: '/images/food/sauces-salad.HEIC',
