@@ -1339,11 +1339,12 @@
   animation: scroll 36s linear infinite;
   width: 200%; /* two copies of the image set for seamless loop */
   gap: 0; /* No gaps between images */
-  align-items: stretch; /* Ensure all images same height */
+  align-items: center;
 }
 
 .carousel-slide {
   width: 11%; /* larger tiles */
+  max-width: 560px;
   position: relative;
   flex-shrink: 0;
   margin: 0;
@@ -1351,7 +1352,7 @@
   display: flex;
   align-items: center; /* center vertically */
   justify-content: center; /* center horizontally */
-  height: 420px; /* taller images */
+  aspect-ratio: 5568 / 3712; /* Maintain 5568×3712 proportions */
 }
 
 @keyframes scroll {
@@ -1364,10 +1365,10 @@
 }
 
 .carousel-image {
-  width: auto; /* proportional scaling */
+  width: 100%; /* Fill slide width */
+  height: 100%;
   max-width: 100%;
-  height: 420px; /* grow with slide height */
-  aspect-ratio: 3 / 2; /* 5568×3712 target ratio */
+  max-height: 100%;
   object-fit: contain; /* show full image, no crop */
   object-position: center;
   display: block;
@@ -1375,13 +1376,15 @@
   padding: 0;
   border: none;
   outline: none;
+  aspect-ratio: 5568 / 3712;
 }
 
 /* Force baklava-1 to use cover to match visual height precisely */
 .carousel-image.baklava1-cover {
-  width: auto;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
-  height: 420px;
+  max-height: 100%;
   object-fit: contain; /* match others; no crop */
 }
 
@@ -1389,7 +1392,8 @@
 
 .carousel-image-placeholder {
   width: 100%;
-  height: 250px;
+  height: 100%;
+  aspect-ratio: 5568 / 3712;
   background: linear-gradient(135deg, var(--dutch-white), var(--hunyadi-yellow));
   display: flex;
   align-items: center;
@@ -1422,44 +1426,22 @@
 
 /* Responsive carousel */
 @media (max-width: 768px) {
-  .carousel-image {
-    height: 200px;
-  }
-  
   .carousel-slide {
-    height: 200px;
+    width: 18%;
+    max-width: 420px;
   }
-  
-  .carousel-image-placeholder {
-    height: 200px;
-  }
-  
-  .carousel-error-fallback {
-    height: 200px;
-  }
-  
+
   .carousel-track {
     animation-duration: 30s; /* Slightly faster on mobile */
   }
 }
 
 @media (max-width: 480px) {
-  .carousel-image {
-    height: 150px;
-  }
-  
   .carousel-slide {
-    height: 150px;
+    width: 26%;
+    max-width: 360px;
   }
-  
-  .carousel-image-placeholder {
-    height: 150px;
-  }
-  
-  .carousel-error-fallback {
-    height: 150px;
-  }
-  
+
   .carousel-track {
     animation-duration: 25s; /* Even faster on small screens */
   }
