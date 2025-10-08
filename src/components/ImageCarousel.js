@@ -16,6 +16,11 @@ const ImageCarousel = () => {
       title: 'Cheese Bourekas'
     },
     {
+      src: '/images/food/cheese-1.JPG',
+      alt: 'Cheese bourekas with flaky pastry layers',
+      title: 'Cheese Bourekas Classic'
+    },
+    {
       src: '/images/food/chocolate-1.JPG',
       alt: 'Chocolate pastry with hazelnuts and chocolate drizzle',
       title: 'Chocolate Pastry'
@@ -26,19 +31,9 @@ const ImageCarousel = () => {
       title: 'Pistachio Baklava'
     },
     {
-      src: '/images/food/cheese-bourekas-egg.JPG',
-      alt: 'Cheese bourekas served with hard-boiled eggs and sauces',
-      title: 'Cheese Bourekas Plate'
-    },
-    {
       src: '/images/food/chocolate-2.JPG',
       alt: 'Chocolate pastry with whipped cream and nuts',
       title: 'Chocolate Dessert'
-    },
-    {
-      src: '/images/food/sauces-salad.HEIC',
-      alt: 'Fresh salads and sauces with herbs and vegetables',
-      title: 'Sauces & Salads'
     }
   ];
 
@@ -51,15 +46,8 @@ const ImageCarousel = () => {
     );
   }
 
-  // Create 123 123 123 123 123 123 pattern
-  const repeatedImages = [
-    ...images, // 123
-    ...images, // 123
-    ...images, // 123
-    ...images, // 123
-    ...images, // 123
-    ...images  // 123
-  ];
+  // Duplicate once so first half == second half; enables seamless -50% scroll
+  const repeatedImages = [...images, ...images];
 
   // Initialize image load states
   useEffect(() => {
@@ -103,6 +91,7 @@ const ImageCarousel = () => {
             {repeatedImages.map((image, index) => {
               const loadState = imageLoadStates[index];
               const showPlaceholder = loadState === 'error' || loadState === undefined;
+              const isBourekas = /bourekas/i.test(image.title) || /bourekas/i.test(image.alt) || /bourekas/i.test(image.src);
               
               return (
                 <div key={`${image.src}-${index}`} className="carousel-slide">
@@ -110,7 +99,7 @@ const ImageCarousel = () => {
                     <img 
                       src={image.src} 
                       alt={image.alt}
-                      className="carousel-image"
+                      className={`carousel-image ${isBourekas ? 'bourekas' : ''}`}
                       onError={(e) => handleImageError(e, index)}
                       onLoad={(e) => handleImageLoad(e, index)}
                       loading="lazy"
