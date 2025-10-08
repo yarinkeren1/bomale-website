@@ -96,9 +96,11 @@ const ImageCarousel = () => {
               return (
                 <div key={`${image.src}-${index}`} className="carousel-slide">
                   {!showPlaceholder && (
-                    <img 
-                      src={image.src} 
+                    <img
+                      src={image.src}
                       alt={image.alt}
+                      width={5568}
+                      height={3712}
                       className={`carousel-image ${isBourekas ? 'bourekas' : ''}`}
                       onError={(e) => handleImageError(e, index)}
                       onLoad={(e) => handleImageLoad(e, index)}
