@@ -366,6 +366,31 @@
     margin-bottom: 3rem;
 }
 
+.bourekas-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.boureka-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.boureka-category-title {
+    color: var(--chocolate);
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--hunyadi-yellow);
+    font-size: 1.875rem;
+}
+
+.more-bourekas {
+    margin-bottom: 2rem;
+}
+
 .menu-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -382,8 +407,8 @@
 }
 
 .menu-items {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
 }
 
@@ -1271,12 +1296,16 @@
         gap: 2rem;
     }
 
+    .bourekas-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
     .menu-categories {
         grid-template-columns: 1fr;
     }
 
     .menu-items {
-        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 

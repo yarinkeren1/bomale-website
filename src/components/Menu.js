@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const Menu = () => {
   const menuData = {
-    bourekas: [
+    savoryBourekas: [
       {
         name: "Feta + Ricotta",
         description: "A delicious mix of creamy ricotta and savory feta, lightly seasoned, baked in golden, crunchy pastry and topped with toasted sesame seeds",
@@ -26,6 +26,16 @@ const Menu = () => {
         sauceOptions: "Tahini, Garlic aioli",
         tagline: "Smoky, tangy, herby — loaded with flavor.",
         price: "16.95"
+      }
+    ],
+    sweetBourekas: [
+      {
+        name: "Baklava",
+        description: "A sweet blend of toasted nuts, honey, cinnamon, and a touch of orange zest. Topped with honey, crushed pistachios, and a side of rose water",
+        servedWith: "",
+        sauceOptions: "Rose water",
+        tagline: "Sweet and crunchy — like baklava in a bourekas suit.",
+        price: "13.95"
       },
       {
         name: "Nutella",
@@ -34,14 +44,6 @@ const Menu = () => {
         sauceOptions: "Chocolate or vanilla",
         tagline: "Nutty and rich — a flavor we all know and love, delivered in a new way.",
         price: "12.95"
-      },
-      {
-        name: "Baklava",
-        description: "A crunchy-sweet blend of toasted walnuts and pistachios with honey, cinnamon, and a touch of orange zest, sealed in pastry. Topped with honey, crushed pistachios, and a side of rose water syrup",
-        servedWith: "",
-        sauceOptions: "Rose water",
-        tagline: "Sweet and crunchy — like baklava in a bourekas suit.",
-        price: "13.95"
       },
       {
         name: "More flavors in the works",
@@ -53,17 +55,17 @@ const Menu = () => {
       }
     ],
     savoryComplements: [
-      { name: "Tahini", description: "Creamy sesame paste, rich and nutty, with a lemony tang.\nPairs best with: Eggplant boureka", price: "0.95" },
       { name: "Green Schug", description: "A bright cilantro–jalapeño Yemeni sauce layered with garlic, lemon, and warm spices. Fresh herbs keep it vibrant, while jalapeños bring a clean, fiery heat", price: "0.95" },
-      { name: "Resek Agvaniyot", description: "Freshly grated tomato, juicy and pulpy.\nPairs best with: Cheese boureka", price: "0.95" }
+      { name: "Resek Agvaniyot", description: "Freshly grated tomato, juicy and pulpy.\nPairs best with: Cheese boureka", price: "0.95" },
+      { name: "Tahini", description: "Creamy sesame paste, rich and nutty, with a lemony tang.\nPairs best with: Eggplant boureka", price: "0.95" }
     ],
     sweetComplements: [
-      { name: "Whipped Cream", description: "Light and airy, cooling, the perfect soft contrast to pastry.\nPairs best with: Nutella + hazelnut boureka", price: "0.95" },
-      { name: "Rose Water Syrup", description: "Elegant and fragrant, with a subtle floral essence.\nPairs best with: Baklava boureka", price: "0.95" }
+      { name: "Rose Water Syrup", description: "Elegant and fragrant, with a subtle floral essence.\nPairs best with: Baklava boureka", price: "0.95" },
+      { name: "Whipped Cream", description: "Light and airy, cooling, the perfect soft contrast to pastry.\nPairs best with: Nutella + hazelnut boureka", price: "0.95" }
     ],
     additionalSides: [
+      { name: "Hard-Boiled Egg", description: "Gently steam-cooked and served as a classic side", price: "0.95" },
       { name: "Israeli salad", description: "Diced mix of juicy tomatoes, crisp cucumbers, sharp onions, and fresh parsley — tossed in lemon juice, olive oil, salt, and pepper.", price: "1.95" },
-      { name: "Hard-Boiled Egg", description: "Gently steam-cooked and served as a classic side", price: "1.95" },
       { name: "Pickles & Olives", description: "Mix of briny olives and traditional Israeli-style pickles.", price: "1.95" }
     ],
     specialtyDrinks: [
@@ -148,8 +150,45 @@ const Menu = () => {
     <section id="menu" className="menu">
       <div className="container">
         <h2>Menu</h2>
-        <div className="menu-categories">
-          <MenuCategory title="Bourekas" items={menuData?.bourekas} />
+        <div className="bourekas-section">
+          <div className="boureka-column">
+            <h3 className="boureka-category-title">Savory Bourekas</h3>
+            <div className="menu-items">
+              {menuData?.savoryBourekas && menuData.savoryBourekas.map((item, index) => (
+                <div key={index} className="menu-item">
+                  <div className="menu-item-header">
+                    <h4>{item.name || 'Unnamed Item'}</h4>
+                    {item.price && <span className="menu-item-price">${item.price}</span>}
+                  </div>
+                  {item.description && (
+                    <p className="menu-description coming-soon-text">{item.description}</p>
+                  )}
+                  {item.servedWith && (
+                    <p className="served-with coming-soon-text"><strong className="coming-soon-text">Served with:</strong> {item.servedWith}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="boureka-column">
+            <h3 className="boureka-category-title">Sweet Bourekas</h3>
+            <div className="menu-items">
+              {menuData?.sweetBourekas && menuData.sweetBourekas.map((item, index) => (
+                <div key={index} className="menu-item">
+                  <div className="menu-item-header">
+                    <h4>{item.name || 'Unnamed Item'}</h4>
+                    {item.price && <span className="menu-item-price">${item.price}</span>}
+                  </div>
+                  {item.description && (
+                    <p className="menu-description coming-soon-text">{item.description}</p>
+                  )}
+                  {item.servedWith && (
+                    <p className="served-with coming-soon-text"><strong className="coming-soon-text">Served with:</strong> {item.servedWith}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
         <div className="menu-note">
           <p>All savory bourekas are served with a hard-boiled egg, pickles & olives, resek agvaniyot, green schug and tahini.</p>
