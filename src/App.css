@@ -408,9 +408,29 @@
     transform: none;
 }
 
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+
 .menu-item h4 {
     color: var(--falu-red);
     margin-bottom: 0.5rem;
+    margin: 0;
+}
+
+.menu-item-price {
+    color: var(--chocolate);
+    font-family: 'Amatic SC', cursive;
+    font-size: 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.menu-description {
+    margin-top: 0.5rem;
 }
 
 .complements-sections {
@@ -418,7 +438,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    text-align: center;
+    text-align: left;
     align-items: start;
 }
 
@@ -454,7 +474,7 @@
 .complement-item {
     color: var(--text-dark);
     font-size: 1.1rem;
-    text-align: center;
+    text-align: left;
     padding: 0;
     background: none;
     border-radius: 0;
@@ -466,14 +486,14 @@
 
 .complement-item h4 {
     color: var(--falu-red);
-    margin-bottom: 0.5rem;
+    margin: 0;
     font-size: 1.2rem;
 }
 
 .complement-item p {
     color: var(--text-light);
     font-size: 0.9rem;
-    margin: 0;
+    margin: 0.5rem 0 0 0;
     line-height: 1.4;
     white-space: pre-line;
 }
@@ -499,7 +519,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    text-align: center;
+    text-align: left;
 }
 
 .additional-sides h3,
@@ -527,7 +547,7 @@
 .side-item {
     color: var(--text-dark);
     font-size: 1.1rem;
-    text-align: center;
+    text-align: left;
     padding: 0;
     background: none;
     border-radius: 0;
@@ -553,7 +573,7 @@
 .side-item h4,
 .drink-item h4 {
     color: var(--falu-red);
-    margin-bottom: 0.5rem;
+    margin: 0;
     font-size: 1.2rem;
 }
 
@@ -561,7 +581,7 @@
 .drink-item p {
     color: var(--text-light);
     font-size: 0.9rem;
-    margin: 0;
+    margin: 0.5rem 0 0 0;
 }
 
 .drink-subsection {
@@ -579,9 +599,35 @@
 
 .drink-item h5 {
     color: var(--falu-red);
-    margin-bottom: 0.5rem;
+    margin: 0;
     font-size: 1.1rem;
     font-family: 'Amatic SC', cursive;
+}
+
+.drink-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+.drink-option-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-left: 1rem;
+}
+
+.drink-option {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.drink-option-price {
+    color: var(--chocolate);
+    font-family: 'Amatic SC', cursive;
+    font-size: 0.9rem;
+    font-weight: 700;
 }
 
 .menu-desc {
